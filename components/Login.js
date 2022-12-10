@@ -38,8 +38,8 @@ function Login({ providers }) {
             </div>
           ))}
          
-        </div><h1 className="relative inline-flex items-center text-white">
-        Talents, capabilities, and ideas flourish together in IdeaX.
+        </div><h1 className="relative inline-flex items-center text-white text-center">
+        Talents, capabilities, and ideas flourish together
           </h1> 
       </div>
     </div>
