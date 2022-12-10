@@ -1,13 +1,22 @@
 import {
+  deleteDoc,
+  doc
+} from "@firebase/firestore";
+import { db } from "../firebase";
+import {
   ChartBarIcon,
   ChatIcon,
   DotsHorizontalIcon,
   HeartIcon,
   ShareIcon,
+  TrashIcon
 } from "@heroicons/react/outline";
 import Moment from "react-moment";
-
-function Comment({ comment }) {
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/router";
+function Comment({ comment ,id,postid}) {
+  const { data: session } = useSession();
+  const router = useRouter();
   return (
     <div className="p-3 flex cursor-pointer border-b border-gray-700">
       <img
@@ -40,9 +49,9 @@ function Comment({ comment }) {
         </div>
 
         <div className="text-[#6e767d] flex justify-between w-10/12">
-          <div className="icon group">
+          {/* <div className="icon group">
             <ChatIcon className="h-5 group-hover:text-[#1d9bf0]" />
-          </div>
+          </div> */}
 
           <div className="flex items-center space-x-1 group">
             <div className="icon group-hover:bg-pink-600/10">
@@ -50,12 +59,28 @@ function Comment({ comment }) {
             </div>
             <span className="group-hover:text-pink-600 text-sm"></span>
           </div>
+          {session.user.uid === comment?.id ? (
+            <div
+              className="flex items-center space-x-1 group"
+              onClick={(e) => {
+                e.stopPropagation();
+                deleteDoc(doc(db, "posts",postid,"comments",id));
+                // router.push(`/${postid}`);
+              }}
+            >
+              <div className="icon group-hover:bg-red-600/10">
+                <TrashIcon className="h-5 group-hover:text-red-600" />
+              </div>
+            </div>
+          ):(
+            <div></div>
+          )}
 
           <div className="icon group">
-            <ShareIcon className="h-5 group-hover:text-[#1d9bf0]" />
+            {/* <ShareIcon className="h-5 group-hover:text-[#1d9bf0]" /> */}
           </div>
           <div className="icon group">
-            <ChartBarIcon className="h-5 group-hover:text-[#1d9bf0]" />
+            {/* <ChartBarIcon className="h-5 group-hover:text-[#1d9bf0]" /> */}
           </div>
         </div>
       </div>

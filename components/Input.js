@@ -132,16 +132,18 @@ function Input() {
                 />
               </div>
 
-              <div className="icon rotate-90">
-                <ChartBarIcon className="text-[#1d9bf0] h-[22px]" />
-              </div>
+             
 
               <div className="icon" onClick={() => setShowEmojis(!showEmojis)}>
                 <EmojiHappyIcon className="text-[#1d9bf0] h-[22px]" />
               </div>
 
+              <div className="icon rotate-90">
+                {/* <ChartBarIcon className="text-[#1d9bf0] h-[22px]" /> */}
+              </div>
+
               <div className="icon">
-                <CalendarIcon className="text-[#1d9bf0] h-[22px]" />
+                {/* <CalendarIcon className="text-[#1d9bf0] h-[22px]" /> */}
               </div>
 
               {showEmojis && (

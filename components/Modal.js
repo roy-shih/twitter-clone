@@ -42,6 +42,7 @@ function Modal() {
 
     await addDoc(collection(db, "posts", postId, "comments"), {
       comment: comment,
+      id: session.user.uid,
       username: session.user.name,
       tag: session.user.tag,
       userImg: session.user.image,
@@ -134,19 +135,19 @@ function Modal() {
                       <div className="flex items-center justify-between pt-2.5">
                         <div className="flex items-center">
                           <div className="icon">
-                            <PhotographIcon className="text-[#1d9bf0] h-[22px]" />
+                            {/* <PhotographIcon className="text-[#1d9bf0] h-[22px]" /> */}
                           </div>
 
                           <div className="icon rotate-90">
-                            <ChartBarIcon className="text-[#1d9bf0] h-[22px]" />
+                            {/* <ChartBarIcon className="text-[#1d9bf0] h-[22px]" /> */}
                           </div>
 
                           <div className="icon">
-                            <EmojiHappyIcon className="text-[#1d9bf0] h-[22px]" />
+                            {/* <EmojiHappyIcon className="text-[#1d9bf0] h-[22px]" /> */}
                           </div>
 
                           <div className="icon">
-                            <CalendarIcon className="text-[#1d9bf0] h-[22px]" />
+                            {/* <CalendarIcon className="text-[#1d9bf0] h-[22px]" /> */}
                           </div>
                         </div>
                         <button

@@ -147,46 +147,7 @@ function Post({ id, post, postPage }) {
             postPage && "mx-auto"
           }`}
         >
-          <div
-            className="flex items-center space-x-1 group"
-            onClick={(e) => {
-              e.stopPropagation();
-              setPostId(id);
-              setIsOpen(true);
-            }}
-          >
-            <div className="icon group-hover:bg-[#1d9bf0] group-hover:bg-opacity-10">
-              <ChatIcon className="h-5 group-hover:text-[#1d9bf0]" />
-            </div>
-            {comments.length > 0 && (
-              <span className="group-hover:text-[#1d9bf0] text-sm">
-                {comments.length}
-              </span>
-            )}
-          </div>
-
-          {session.user.uid === post?.id ? (
-            <div
-              className="flex items-center space-x-1 group"
-              onClick={(e) => {
-                e.stopPropagation();
-                deleteDoc(doc(db, "posts", id));
-                router.push("/");
-              }}
-            >
-              <div className="icon group-hover:bg-red-600/10">
-                <TrashIcon className="h-5 group-hover:text-red-600" />
-              </div>
-            </div>
-          ) : (
-            <div className="flex items-center space-x-1 group">
-              <div className="icon group-hover:bg-green-500/10">
-                <SwitchHorizontalIcon className="h-5 group-hover:text-green-500" />
-              </div>
-            </div>
-          )}
-
-          <div
+           <div
             className="flex items-center space-x-1 group"
             onClick={(e) => {
               e.stopPropagation();
@@ -211,11 +172,56 @@ function Post({ id, post, postPage }) {
             )}
           </div>
 
+          <div
+            className="flex items-center space-x-1 group"
+            onClick={(e) => {
+              e.stopPropagation();
+              setPostId(id);
+              setIsOpen(true);
+            }}
+          >
+            <div className="icon group-hover:bg-[#1d9bf0] group-hover:bg-opacity-10">
+              <ChatIcon className="h-5 group-hover:text-[#1d9bf0]" />
+            </div>
+            {comments.length > 0 && (
+              <span className="group-hover:text-[#1d9bf0] text-sm">
+                {comments.length}
+              </span>
+            )}
+          </div>
+
+          {session.user.uid === post?.id?  (
+            <div
+              className="flex items-center space-x-1 group"
+              onClick={(e) => {
+                e.stopPropagation();
+                // deleteDoc(doc(db, "posts", id));
+                // router.push("/");
+                console.log(post.id)
+              }}
+            >
+              <div className="icon group-hover:bg-red-600/10">
+                <TrashIcon className="h-5 group-hover:text-red-600" />
+              </div>
+            </div>
+          ):(
+            <div></div>
+          )}
+          {/* : (
+
+            // <div className="flex items-center space-x-1 group">
+            //   <div className="icon group-hover:bg-green-500/10">
+            //     <SwitchHorizontalIcon className="h-5 group-hover:text-green-500" />
+            //   </div>
+            // </div>
+         ){"}"} */}
+
+         
           <div className="icon group">
-            <ShareIcon className="h-5 group-hover:text-[#1d9bf0]" />
+            {/* <ShareIcon className="h-5 group-hover:text-[#1d9bf0]" /> */}
           </div>
           <div className="icon group">
-            <ChartBarIcon className="h-5 group-hover:text-[#1d9bf0]" />
+            {/* <ChartBarIcon className="h-5 group-hover:text-[#1d9bf0]" /> */}
           </div>
         </div>
       </div>
