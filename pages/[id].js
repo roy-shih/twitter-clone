@@ -53,7 +53,7 @@ function PostPage({ trendingResults, followResults, providers }) {
     <div>
       <Head>
         <title>
-          {post?.username} on X-Space: "{post?.text}"
+          {post?.username} on IdeaX: "{post?.text}"
         </title>
         <link rel="icon" href="/icon-192x192.png" />
         <link rel="manifest" href="/manifest.json" /> 

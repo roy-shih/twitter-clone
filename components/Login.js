@@ -6,7 +6,7 @@ function Login({ providers }) {
   return (
     <div>
        <Head>
-        <title>X Idea</title>
+        <title>IdeaX</title>
         <link rel="icon" href="/icon-192x192.png" />
         <link rel="manifest" href="/manifest.json" /> 
       </Head>
@@ -37,7 +37,7 @@ function Login({ providers }) {
           ))}
          
         </div><h1 className="relative inline-flex items-center text-white">
-        Talents, capabilities, and ideas flourish together in X Bridge.
+        Talents, capabilities, and ideas flourish together in IdeaX.
           </h1> 
       </div>
     </div>

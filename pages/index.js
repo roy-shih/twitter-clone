@@ -17,7 +17,7 @@ export default function Home({ trendingResults, followResults, providers }) {
   return (
     <div className="">
       <Head>
-        <title>Home / X-Idea</title>
+        <title>Home / IdeaX</title>
         <link rel="icon" href="/icon-192x192.png" />
         <link rel="manifest" href="/manifest.json" /> 
       </Head>
