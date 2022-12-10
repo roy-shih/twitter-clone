@@ -57,6 +57,8 @@ function PostPage({ trendingResults, followResults, providers }) {
         </title>
         <link rel="icon" href="/icon-192x192.png" />
         <link rel="manifest" href="/manifest.json" /> 
+        <link rel="apple-touch-icon" href="/logo-96x96.png" />
+        <meta name="apple-mobile-web-app-status-bar" content="#90cdf4" />
       </Head>
       <main className="bg-black min-h-screen flex max-w-[1500px] mx-auto">
         <Sidebar />

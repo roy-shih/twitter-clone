@@ -90,7 +90,7 @@ function Modal() {
               </div>
               <div className="flex px-4 pt-5 pb-2.5 sm:px-6">
                 <div className="w-full">
-                  <div className="text-[#6e767d] flex gap-x-3 relative">
+                  {/* <div className="text-[#6e767d] flex gap-x-3 relative">
                     <span className="w-0.5 h-full z-[-1] absolute left-5 top-11 bg-gray-600" />
                     <img
                       src={post?.userImg}
@@ -114,7 +114,7 @@ function Modal() {
                         {post?.text}
                       </p>
                     </div>
-                  </div>
+                  </div> */}
 
                   <div className="mt-7 flex space-x-3 w-full">
                     <img

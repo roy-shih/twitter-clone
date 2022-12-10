@@ -42,6 +42,7 @@ function Post({ id, post, postPage }) {
     maxHeight:"150px", 
     overflow:"hidden",
     textOverflow: 'ellipsis',
+    maxWidth: "100%",
   };
 
   useEffect(
@@ -125,7 +126,7 @@ function Post({ id, post, postPage }) {
             {!postPage && (
               <p className="text-[#d9d9d9] text-[15px] sm:text-base mt-0.5 whitespace-pre-wrap" 
                 style={ text }>
-                { post?.text.length > 150 ? post?.text.slice(0, 150) + "..." : post?.text }
+                { post?.text.length > 50 ? post?.text.slice(0, 50) + "..." : post?.text }
               </p>
             )}
           </div>
