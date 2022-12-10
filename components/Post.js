@@ -37,6 +37,13 @@ function Post({ id, post, postPage }) {
   const [liked, setLiked] = useState(false);
   const router = useRouter();
 
+  //text style
+  const text = {
+    maxHeight:"150px", 
+    overflow:"hidden",
+    textOverflow: 'ellipsis',
+  };
+
   useEffect(
     () =>
       onSnapshot(
@@ -116,8 +123,9 @@ function Post({ id, post, postPage }) {
               <Moment fromNow>{post?.timestamp?.toDate()}</Moment>
             </span>
             {!postPage && (
-              <p className="text-[#d9d9d9] text-[15px] sm:text-base mt-0.5">
-                {post?.text}
+              <p className="text-[#d9d9d9] text-[15px] sm:text-base mt-0.5 whitespace-pre-wrap" 
+                style={ text }>
+                { post?.text.length > 150 ? post?.text.slice(0, 150) + "..." : post?.text }
               </p>
             )}
           </div>
@@ -126,7 +134,7 @@ function Post({ id, post, postPage }) {
           </div>
         </div>
         {postPage && (
-          <p className="text-[#d9d9d9] mt-0.5 text-xl">{post?.text}</p>
+          <p className="text-[#d9d9d9] text-[15px] mt-0.5 text-xl whitespace-pre-wrap">{post?.text}</p>
         )}
         <img
           src={post?.image}

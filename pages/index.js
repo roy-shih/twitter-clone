@@ -17,8 +17,9 @@ export default function Home({ trendingResults, followResults, providers }) {
   return (
     <div className="">
       <Head>
-        <title>Home / Twitter</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Home / X-Idea</title>
+        <link rel="icon" href="/icon-192x192.png" />
+        <link rel="manifest" href="/manifest.json" /> 
       </Head>
 
       <main className="bg-black min-h-screen flex max-w-[1500px] mx-auto">
