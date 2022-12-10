@@ -1,7 +1,8 @@
 {
     "theme_color": "#1e4356",
     "background_color": "#000000",
-    "display": "browser",
+    "display": "standalone",
+    "orientation": "portrait",
     "scope": "/",
     "start_url": "/",
     "name": "X Bridge Space",
