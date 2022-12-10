@@ -195,8 +195,8 @@ function Post({ id, post, postPage }) {
               className="flex items-center space-x-1 group"
               onClick={(e) => {
                 e.stopPropagation();
-                // deleteDoc(doc(db, "posts", id));
-                // router.push("/");
+                deleteDoc(doc(db, "posts", id));
+                router.push("/");
                 console.log(post.id)
               }}
             >
